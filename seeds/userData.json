@@ -1,0 +1,17 @@
+[
+  {
+      "username": "Nick Jones",
+      "email": "nick@aol.com",
+      "password": "password"
+  },
+  {
+      "username": "Zeke Dean",
+      "email": "zeke@yahoo.com",
+      "password": "password"
+  },
+  {
+      "username": "Adam Ryan",
+      "email": "adam@gmail.com",
+      "password": "password"
+  }
+]

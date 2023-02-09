@@ -1,0 +1,14 @@
+<div class="card">
+  <div class="card-header  flex-row justify-space-between">
+    <h2>
+      <a href="/blog/{{id}}">
+        <div class="col-8">{{blogTitle}}</div>
+      </a>
+    </h2>
+    <div class="col-3">blogged by {{user.username}} on {{format_date dateCreated}}
+    </div>
+  </div>  
+  <p class="card-body">
+   {{blogDescription}}
+  </p>
+</div>

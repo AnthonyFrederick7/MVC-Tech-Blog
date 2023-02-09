@@ -1,0 +1,31 @@
+<div class="card">
+    <div class="card-body">
+        <h2 class="card-title">{{blog.title}}</h5>
+            <h4 class="card-subtitle mb-2 text-muted">{{blog.user.username}} on {{formatDate blog.createdAt}}</h6>
+                <p class="card-text">{{blog.description}}</p>
+    </div>
+    {{#each blog.comments as |comment| }}
+    <div class="card m-5" style="margin: 10px;">
+        <div class="card-body">
+            <h4 class="card-subtitle mb-2 text-muted">{{comment.user.username}}</h4>
+            <h6 class=" card-subtitle mb-20 text-muted"> {{formatDate comment.createdAt}}</h6>
+            <p class="card-text">{{comment.comment}}</p>
+        </div>
+    </div>
+    {{/each}}
+    {{#if logged_in}}
+    <form id="new-comment-form" style="margin: 10px;">
+        <div class="form-group">
+            <label for="comment-body">Commenting as {{user.name}}</label>
+            <br>
+            <textarea class="form-control" id="comment-body" rows="3" style="width: 100%"></textarea>
+            <input type="hidden" id="user-id" value="{{user.id}}">
+            <input type="hidden" id="blog-id" value="{{blog.id}}">
+            <button class="btn btn-primary" type="submit">Comment</button>
+        </div>
+    </form>
+    {{else}}
+    <h3 style="margin: 10px;">Please <a href="/login">login</a> to add a comment</h3>
+    {{/if}}
+</div>
+<script src="../js/comment.js"></script>

@@ -1,0 +1,28 @@
+<div>
+    <form class="form" id="edit-blog-form">
+        <div>
+            <h1>Edit Blog</h1>
+        </div>
+        <div class="form-group">
+            Title: <input class="form-control" type="text" value="{{blog.title}}" id="blog-title">
+        </div>
+        <div class="form-group">
+            <div class="form-group">
+                <label for="blog-body">Blog:</label><br>
+                <textarea class="form-control" id="blog-body" rows="25" style="width: 100%">{{blog.description}}</textarea>
+            </div>
+        </div>
+        <div class="form-group">
+            <button class="btn btn-primary" type="submit">
+                Edit Blog
+            </button>
+        </div>
+        <input type="hidden" id="blog-id" value="{{blog.id}}">
+    </form>
+    <div>
+        <button class="btn btn-primary" type="submit" id="delete-btn">
+            Delete Blog
+        </button>
+    </div>
+</div>
+<script src="../../js/edit.js"></script>

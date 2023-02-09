@@ -1,0 +1,17 @@
+[
+    {
+        "comment": "HTML is COOL",
+        "user_id": 2,
+        "blog_id": 1
+    },
+    {
+        "comment": "CSS is COOL",
+        "user_id": 3,
+        "blog_id": 2
+    },
+    {
+        "comment": "Javascript is COOL",
+        "user_id": 1,
+        "blog_id": 3
+    }
+]

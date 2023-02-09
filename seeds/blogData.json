@@ -1,0 +1,14 @@
+[
+{
+    "title": "HTML",
+    "description": "HTML is the text of a webpage"
+},
+{
+    "title": "CSS",
+    "description": "CSS is the visual presentation of a webpage"
+},
+{
+    "title": "JS",
+    "description": "Javascript is the interactivity of a webpage"
+}
+]

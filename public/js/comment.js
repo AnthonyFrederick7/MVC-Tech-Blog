@@ -1,27 +1,25 @@
 const commentFormHandler = async function(event) {
     event.preventDefault();
   
-    const blog_id = document.querySelector('#blog-id').value;
-    const user_id = document.querySelector('#user-id').value;
-    const comment = document.querySelector('#comment-body').value;
+    const blogId = document.querySelector('#blogId').value;
+    const userId = document.querySelector('#userId').value;
+    const comment = document.querySelector('#commentBody').value;
   
     if (comment) {
       await fetch('/api/comment', {
         method: 'POST',
         body: JSON.stringify({
-          blog_id,
-          user_id,
+          blogId,
+          userId,
           comment
         }),
         headers: { 'Content-Type': 'application/json' }
       });
-  
       document.location.reload();
     }
   };
-  
-  if(document.querySelector('#new-comment-form')) {
-    document
-      .querySelector('#new-comment-form')
-      .addEventListener('submit', commentFormHandler);
+
+  if(document.querySelector('#newComment')) {
+    document.querySelector('#newComment')
+    document.addEventListener('submit', commentFormHandler);
   }

@@ -1,11 +1,9 @@
-const blogId = document.querySelector('#blog-id').value;
-
 const editFormHandler = async function(event) {
   event.preventDefault();
-
-  const title = document.querySelector('#blog-title').value;
-  const content = document.querySelector('#blog-body').value;
-
+  
+  const title = document.querySelector('#blogTitle').value;
+  const content = document.querySelector('#blogBody').value;
+  
   await fetch(`/api/blog/${blogId}`, {
     method: 'PUT',
     body: JSON.stringify({
@@ -16,9 +14,11 @@ const editFormHandler = async function(event) {
       'Content-Type': 'application/json'
     }
   });
-
+  
   document.location.replace('/dashboard');
 };
+
+const blogId = document.querySelector('#blogId').value;
 
 const deleteClickHandler = async function() {
   await fetch(`/api/blog/${blogId}`, {
@@ -28,9 +28,7 @@ const deleteClickHandler = async function() {
   document.location.replace('/dashboard');
 };
 
-document
-  .querySelector('#edit-blog-form')
-  .addEventListener('submit', editFormHandler);
-document
-  .querySelector('#delete-btn')
-  .addEventListener('click', deleteClickHandler);
+document.querySelector('#editBlog')
+document.addEventListener('submit', editFormHandler);
+document.querySelector('#deleteButton')
+document.addEventListener('click', deleteClickHandler);

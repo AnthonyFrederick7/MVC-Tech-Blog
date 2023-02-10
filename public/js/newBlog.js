@@ -1,8 +1,8 @@
 const newFormHandler = async function(event) {
     event.preventDefault();
   
-    const title = document.querySelector('#blog-title').value;
-    const description = document.querySelector('#blog-description').value;
+    const title = document.querySelector('#blogTitle').value;
+    const description = document.querySelector('#blogDescription').value;
   
     await fetch(`/api/blog`, {
       method: 'POST',
@@ -12,10 +12,8 @@ const newFormHandler = async function(event) {
       }),
       headers: { 'Content-Type': 'application/json' },
     });
-  
     document.location.replace('/dashboard');
   };
   
-  document
-    .querySelector('#new-blog-form')
-    .addEventListener('submit', newFormHandler);
+  document.querySelector('#newBlog')
+  document.addEventListener('submit', newFormHandler);

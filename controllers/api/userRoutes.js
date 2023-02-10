@@ -10,7 +10,7 @@ router.post('/', async (req, res) => {
         req.session.user_id = userData.id;
         req.session.logged_in = true;
 
-        res.status(200).json(userData);
+        res.json(userData);
       });
     } catch (err) {
       res.status(400).json(err);
@@ -26,7 +26,7 @@ router.post('/login', async (req, res) => {
     if (!userData || !validPassword) {
       res
         .status(400)
-        .json({ message: 'Incorrect email or password, please try again' });
+        .json({ message: 'Incorrect email or password' });
       return;
     }
 
@@ -34,7 +34,7 @@ router.post('/login', async (req, res) => {
       req.session.user_id = userData.id;
       req.session.logged_in = true;
       
-      res.json({ user: userData, message: 'You are logged in!' });
+      res.json({ user: userData, message: 'You have logged in!' });
     });
 
   } catch (err) {

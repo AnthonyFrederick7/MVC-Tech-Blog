@@ -1,9 +1,9 @@
 const signupFormHandler = async function(event) {
     event.preventDefault();
   
-    const usernameEl = document.querySelector('#username-input-signup');
-    const passwordEl = document.querySelector('#password-input-signup');
-    const emailEl = document.querySelector('#email-input-signup');
+    const usernameEl = document.querySelector('#usernameSignup');
+    const passwordEl = document.querySelector('#passwordSignup');
+    const emailEl = document.querySelector('#emailSignup');
   
     const response = await fetch('/api/user', {
       method: 'POST',
@@ -18,10 +18,9 @@ const signupFormHandler = async function(event) {
     if (response.ok) {
       document.location.replace('dashboard');
     } else {
-      alert('Failed to sign up');
+      alert('Could not sign up');
     }
   };
   
-  document
-    .querySelector('#signup-form')
-    .addEventListener('submit', signupFormHandler);
+  document.querySelector('#signupForm')
+  document.addEventListener('submit', signupFormHandler);
